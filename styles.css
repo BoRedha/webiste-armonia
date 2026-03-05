@@ -202,12 +202,16 @@ h1 {
 
 .banner-strip {
   width: 100%;
-  height: 240px;
+  height: 100svh;
   overflow: hidden;
   border-top: 1px solid var(--line);
   border-bottom: 1px solid var(--line);
-  margin: 0.8rem 0 2.4rem;
+  margin: 0 0 2.4rem;
   background: linear-gradient(110deg, var(--c1), var(--c2), var(--c3));
+}
+
+.banner-hero-top {
+  margin-top: 0;
 }
 
 .banner-strip img {
@@ -333,7 +337,7 @@ footer {
   }
 
   .banner-strip {
-    height: 170px;
+    height: 100svh;
   }
 }
 
