@@ -1,0 +1,472 @@
+﻿<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hotel Armonia | Ihr Aufenthalt. Ihre Bühne.</title>
+  <meta name="description" content="Boutique-Hotel Armonia am Gärtnerplatz: Theaterflair, Kulturerlebnis und nachhaltige Gastfreundschaft im Herzen Münchens." />
+  <style>
+    :root {
+      --bg: #f6f2ea;
+      --paper: #fffdf8;
+      --ink: #1e1b18;
+      --muted: #5d554d;
+      --gold: #b68a4a;
+      --wine: #7a2e3a;
+      --line: #e6ddd1;
+      --shadow: 0 12px 30px rgba(30, 27, 24, 0.08);
+      --radius: 18px;
+      --max: 1120px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Georgia", "Times New Roman", serif;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 15% 0%, #fff5dc 0%, transparent 38%),
+        radial-gradient(circle at 85% 25%, #f3e2cf 0%, transparent 42%),
+        var(--bg);
+      line-height: 1.6;
+    }
+
+    .container {
+      width: min(100% - 2rem, var(--max));
+      margin-inline: auto;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      backdrop-filter: blur(8px);
+      background: color-mix(in srgb, var(--paper) 86%, transparent);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.9rem 0;
+      gap: 1rem;
+    }
+
+    .brand {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.2;
+    }
+
+    .brand strong {
+      font-size: 1.2rem;
+      letter-spacing: 0.03em;
+    }
+
+    .brand span {
+      font-size: 0.82rem;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: var(--ink);
+      font-size: 0.95rem;
+    }
+
+    .hero {
+      padding: 5.5rem 0 4rem;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 1.5rem;
+      align-items: stretch;
+    }
+
+    .hero-card,
+    .panel {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    .hero-card {
+      padding: 2.4rem;
+      display: grid;
+      gap: 1.1rem;
+      border-top: 4px solid var(--gold);
+    }
+
+    .eyebrow {
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--wine);
+      font-size: 0.78rem;
+      font-weight: bold;
+    }
+
+    h1, h2, h3 {
+      line-height: 1.2;
+      font-weight: 600;
+    }
+
+    h1 {
+      font-size: clamp(1.8rem, 4vw, 3rem);
+    }
+
+    .lead {
+      color: var(--muted);
+      font-size: 1.07rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+      margin-top: 0.5rem;
+    }
+
+    .btn {
+      border: 1px solid transparent;
+      border-radius: 999px;
+      padding: 0.68rem 1.2rem;
+      text-decoration: none;
+      font-size: 0.95rem;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 160px;
+      transition: transform 0.18s ease, background 0.2s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-1px);
+    }
+
+    .btn-primary {
+      background: var(--wine);
+      color: #fff;
+    }
+
+    .btn-secondary {
+      background: transparent;
+      color: var(--wine);
+      border-color: var(--wine);
+    }
+
+    .stats {
+      display: grid;
+      gap: 0.7rem;
+      padding: 1.5rem;
+    }
+
+    .stat {
+      padding: 1rem;
+      background: linear-gradient(120deg, #fff 0%, #f9f2e7 100%);
+      border-radius: 12px;
+      border: 1px solid var(--line);
+    }
+
+    .stat strong {
+      display: block;
+      font-size: 1.3rem;
+      color: var(--wine);
+    }
+
+    section {
+      padding: 1.2rem 0 3rem;
+    }
+
+    .section-title {
+      margin-bottom: 1.1rem;
+    }
+
+    .section-title p {
+      color: var(--muted);
+      margin-top: 0.4rem;
+    }
+
+    .grid {
+      display: grid;
+      gap: 1rem;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .card {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 1.1rem;
+    }
+
+    .card p, .card li {
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .card ul {
+      margin-left: 1rem;
+      margin-top: 0.5rem;
+      display: grid;
+      gap: 0.4rem;
+    }
+
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+
+    .price {
+      font-size: 1.35rem;
+      color: var(--wine);
+      margin-top: 0.7rem;
+      display: inline-block;
+    }
+
+    .campaign {
+      border-left: 4px solid var(--gold);
+    }
+
+    .contact {
+      display: grid;
+      gap: 0.8rem;
+      padding: 1.3rem;
+      text-align: center;
+    }
+
+    footer {
+      padding: 1.4rem 0 2.2rem;
+      color: var(--muted);
+      text-align: center;
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 960px) {
+      .hero-grid,
+      .two-col,
+      .grid {
+        grid-template-columns: 1fr;
+      }
+
+      nav ul {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <div class="brand">
+        <strong>Hotel Armonia</strong>
+        <span>Ihr Aufenthalt. Ihre Bühne.</span>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="#usp">USP</a></li>
+          <li><a href="#zielgruppe">Zielgruppen</a></li>
+          <li><a href="#packages">Packages</a></li>
+          <li><a href="#kampagne">Eröffnung</a></li>
+          <li><a href="#kontakt">Kontakt</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <article class="hero-card">
+          <p class="eyebrow">Boutique-Hotel am Gärtnerplatz, München</p>
+          <h1>Werde Teil der Inszenierung.</h1>
+          <p class="lead">
+            Armonia verbindet Theaterkunst, architektonische Geschichte und modernes Hotelerlebnis.
+            Bei uns ist jeder Gast nicht nur Besucher, sondern Hauptdarsteller.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#packages">Packages ansehen</a>
+            <a class="btn btn-secondary" href="#kontakt">Eröffnung anfragen</a>
+          </div>
+        </article>
+
+        <aside class="panel stats" aria-label="Eröffnungsziele">
+          <div class="stat">
+            <strong>+55%</strong>
+            Auslastungsquote im Eröffnungsjahr
+          </div>
+          <div class="stat">
+            <strong>30.000</strong>
+            Social-Media-Follower als Zielmarke
+          </div>
+          <div class="stat">
+            <strong>200+</strong>
+            positive Google-Bewertungen
+          </div>
+          <div class="stat">
+            <strong>1x/Woche</strong>
+            Eventanfragen für den VA-Raum
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section id="usp">
+      <div class="container">
+        <div class="section-title">
+          <h2>Was Armonia einzigartig macht</h2>
+          <p>
+            Zentral, kulturell und nachhaltig: ein ehemaliges Theater wird zum neuen Treffpunkt für Kunst, Bühne und Boutique-Hospitality.
+          </p>
+        </div>
+        <div class="grid">
+          <article class="card">
+            <h3>Standort Gärtnerplatz</h3>
+            <ul>
+              <li>Zentral im Münchner Kulturviertel</li>
+              <li>Schneller Zugang zu Oper, Theater und Konzerten</li>
+              <li>Viertel mit Gastronomie, Boutiquen und Szenecharakter</li>
+            </ul>
+          </article>
+          <article class="card">
+            <h3>Kultur & Architektur</h3>
+            <ul>
+              <li>Ehemaliges Theatergebäude mit Geschichte</li>
+              <li>Einzigartige Architektur mit neuem Theaterflair</li>
+              <li>Neuer Treffpunkt für Künstler und Kreative</li>
+            </ul>
+          </article>
+          <article class="card">
+            <h3>Nachhaltigkeit</h3>
+            <ul>
+              <li>Revitalisierung eines Bestandsgebäudes</li>
+              <li>Nachhaltige Sanierung und Baukonzept</li>
+              <li>Bewusste Arbeits- und Betriebskonzepte</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="zielgruppe">
+      <div class="container">
+        <div class="section-title">
+          <h2>Zielgruppen</h2>
+          <p>Hotel Armonia richtet sich an Gäste, die mehr als eine Übernachtung suchen.</p>
+        </div>
+        <div class="grid">
+          <article class="card"><p>Kreative und Kulturliebhaber mit Sinn für Atmosphäre und Inszenierung.</p></article>
+          <article class="card"><p>Geschäftsreisende aus Kultur-, Medien- und Kreativbranche.</p></article>
+          <article class="card"><p>Künstler, Schauspieler und Wochenendgäste mit Wunsch nach besonderem Erlebnis.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="packages">
+      <div class="container">
+        <div class="section-title">
+          <h2>Signature Packages</h2>
+          <p>Kuratiert für Wochenenden voller Kultur, Genuss und kreativer Energie.</p>
+        </div>
+        <div class="two-col">
+          <article class="card">
+            <h3>Kultur & Kulisse</h3>
+            <p>Freitag bis Sonntag | Zielgruppe 30-65 Jahre</p>
+            <ul>
+              <li>Begrüßungsdrink „Ouvertüre“ an der Hotelbar</li>
+              <li>Kulturkarte für Oper, Theater oder Konzerte</li>
+              <li>3-Gang-Menü im „Allegro“ am Samstag</li>
+              <li>Late Check-out am Sonntag</li>
+            </ul>
+            <span class="price">690 € p.P. im Doppelzimmer</span>
+          </article>
+
+          <article class="card">
+            <h3>Creative Escape</h3>
+            <p>Freitag bis Sonntag | Für Kreative, Künstler, Designer</p>
+            <ul>
+              <li>Nutzung eines VA-Raums als Creative Room/Proberaum</li>
+              <li>Künstler-Workshop im Haus der Kunst</li>
+              <li>Frühstück und Dinner inklusive</li>
+              <li>Late Check-out am Sonntag</li>
+            </ul>
+            <span class="price">649 € p.P. im Doppelzimmer</span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="kampagne">
+      <div class="container">
+        <div class="section-title">
+          <h2>Eröffnungskampagne</h2>
+          <p>Titel: <strong>„Werde Teil der Inszenierung“</strong> - die Bühne gehört dem Gast.</p>
+        </div>
+        <div class="two-col">
+          <article class="card campaign">
+            <h3>Botschaft & Maßnahmen</h3>
+            <ul>
+              <li>Social Media: Reels, Behind-the-Scenes, Umbauvideos, Künstlerinterviews</li>
+              <li>PR: Presseevent mit Reise- und Kulturjournalisten</li>
+              <li>Kooperationen: Opern, Konzertveranstalter, Kunstakademien, Kulturmagazine</li>
+              <li>Außenwerbung: Hochwertige Plakate und digitale Screens im Stadtzentrum</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h3>Budgetübersicht</h3>
+            <ul>
+              <li>Imagefilm: 8.000 €</li>
+              <li>Social Media Ads: 6.000 €</li>
+              <li>Influencer-Kooperationen: 5.000 €</li>
+              <li>Presseevent: 7.000 €</li>
+              <li>Außenplakate: 10.000 €</li>
+              <li>Grafik und Design: 4.000 €</li>
+            </ul>
+            <span class="price">Gesamt: 40.000 €</span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="kontakt">
+      <div class="container">
+        <div class="panel contact">
+          <h2>Hotel Armonia</h2>
+          <p>Gärtnerplatz, München</p>
+          <p><strong>Slogan:</strong> Ihr Aufenthalt. Ihre Bühne.</p>
+          <a class="btn btn-primary" href="mailto:kontakt@hotel-armonia.de">kontakt@hotel-armonia.de</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      Hotel Armonia - Boutique-Hotel mit Theaterflair und nachhaltigem Konzept.
+    </div>
+  </footer>
+</body>
+</html>
