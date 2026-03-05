@@ -59,8 +59,22 @@ header {
 
 .brand {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.65rem;
   line-height: 1.2;
+}
+
+.brand-logo {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+  flex: 0 0 auto;
+}
+
+.brand div {
+  display: flex;
+  flex-direction: column;
 }
 
 .brand strong {
