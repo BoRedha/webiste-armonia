@@ -31,6 +31,7 @@ body {
     radial-gradient(circle at 86% 24%, rgba(122, 130, 130, 0.28) 0%, transparent 42%),
     var(--bg);
   line-height: 1.6;
+  overflow-x: hidden;
 }
 
 .container {
@@ -99,7 +100,7 @@ nav a:hover {
 
 .hero-grid {
   display: grid;
-  grid-template-columns: 1.15fr 0.85fr;
+  grid-template-columns: 1fr;
   gap: 1.5rem;
   align-items: stretch;
 }
